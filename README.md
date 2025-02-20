@@ -18,41 +18,41 @@
     </script>
 </head>
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
-    <div id="password-form" class="bg-black rounded-lg shadow-lg p-6 w-11/12 sm:w-1/3">
-        <div class="bg-blue-700 text-white text-center py-4 rounded-t-lg text-lg">
+    <div id="password-form" class="bg-black rounded-lg shadow-lg p-4 w-11/12 sm:w-1/4">
+        <div class="bg-blue-700 text-white text-center py-2 rounded-t-lg text-lg">
             Nhập Mật Khẩu
         </div>
-        <div class="p-4">
-            <input type="password" id="password" class="w-full p-3 rounded mb-4 text-lg" placeholder="Mật khẩu">
-            <button onclick="checkPassword()" class="w-full bg-blue-700 text-white py-3 rounded text-lg">Mở Khóa</button>
+        <div class="p-2">
+            <input type="password" id="password" class="w-full p-2 rounded mb-2 text-lg" placeholder="Mật khẩu">
+            <button onclick="checkPassword()" class="w-full bg-blue-700 text-white py-2 rounded text-lg">Mở Khóa</button>
         </div>
     </div>
-    <div id="main-menu" class="bg-black rounded-lg shadow-lg p-6 w-11/12 sm:w-1/3 hidden">
-        <div class="bg-blue-700 text-white text-center py-4 rounded-t-lg text-lg">
+  <div id="main-menu" class="bg-black rounded-lg shadow-lg p-4 w-11/12 sm:w-1/4 hidden">
+        <div class="bg-blue-700 text-white text-center py-2 rounded-t-lg text-lg">
             OPTIMIZED CONFIGURATION  @Pham_dong_an
         </div>
-        <div class="p-4">
-            <div class="flex items-center mb-4">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
+        <div class="p-2">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                 <span class="ml-2 text-white text-lg">SETUP DPI CONFIG</span>
             </div>
-            <div class="flex items-center mb-4">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                 <span class="ml-2 text-white text-lg">TỐI ƯU HOÁ </span>
             </div>
-            <div class="flex items-center mb-4">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                 <span class="ml-2 text-white text-lg">GIẢM LỐ ĐẦU</span>
             </div>
-            <div class="flex items-center mb-4">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                 <span class="ml-2 text-white text-lg">NHẸ TÂM IOS</span>
             </div>
-            <div class="flex items-center mb-4">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
+            <div class="flex items-center mb-2">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                 <span class="ml-2 text-white text-lg">FIX RUNG TÂM</span>
             </div>
-            <div class="text-red-600 text-center mt-4 text-lg">
+            <div class="text-red-600 text-center mt-2 text-lg">
                 Zalo Admin: 0868.124.375
             </div>
         </div>
