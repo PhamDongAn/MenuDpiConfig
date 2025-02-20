@@ -47,7 +47,7 @@
 </head>
 <body>
 
-<h1>Menu Tùy Chỉnh</h1>
+<h1>Optimized Configurations</h1>
 <div class="menu-container">
     <ul class="menu">
         <li class="menu-item">
