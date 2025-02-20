@@ -3,76 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPTIMIZED CONFIGURATION</title>
+    <title>Menu Tùy Chỉnh</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-        .container {
-            background-color: #2d2d2d;
-            padding: 30px;
+        .menu-container {
+            border: 2px solid #4CAF50;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 400px;
-            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .config-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #007aff;
+        .menu {
+            list-style-type: none;
+            padding: 0;
         }
-        .checkbox-item {
+        .menu-item {
+            margin: 10px 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 20px;
         }
-        .checkbox-item input {
-            margin-right: 10px;
+        .toggle {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        .admin-contact {
-            color: red;
-            font-size: 20px;
-            margin-top: 20px;
+        .toggle.off {
+            background-color: #f44336;
+        }
+        .toggle:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="config-title">OPTIMIZED CONFIGURATION</div>
-        <div class="p-4">
-            <div class="checkbox-item">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
-                <span>SETUP DPI CONFIG</span>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
-                <span>TỐI ƯU HOÁ</span>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
-                <span>GIẢM LỐ ĐẦU</span>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
-                <span>NHẸ TÂM IOS</span>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" class="form-checkbox h-6 w-6 text-blue-600">
-                <span>FIX RUNG TÂM</span>
-            </div>
-        </div>
-        <div class="admin-contact">
-            Zalo Admin: 0868.124.375
-        </div>
-    </div>
+
+<h1>Menu Tùy Chỉnh</h1>
+<div class="menu-container">
+    <ul class="menu">
+        <li class="menu-item">
+            <span>Optimized Configuration</span>
+            <button class="toggle" onclick="toggle(this)">Bật</button>
+        </li>
+        <li class="menu-item">
+            <span>Setup DPI Config</span>
+            <button class="toggle" onclick="toggle(this)">Bật</button>
+        </li>
+        <li class="menu-item">
+            <span>Tối Ưu Hóa</span>
+            <button class="toggle" onclick="toggle(this)">Bật</button>
+        </li>
+        <li class="menu-item">
+            <span>Giảm Lố Đầu</span>
+            <button class="toggle" onclick="toggle(this)">Bật</button>
+        </li>
+        <li class="menu-item">
+            <span>Fix Rung Tâm</span>
+            <button class="toggle" onclick="toggle(this)">Bật</button>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function toggle(button) {
+        button.classList.toggle('off');
+        button.textContent = button.classList.contains('off') ? 'Tắt' : 'Bật';
+    }
+</script>
+
 </body>
 </html>
