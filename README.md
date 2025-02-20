@@ -17,14 +17,14 @@
         }
         .container {
             background-color: #2d2d2d;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 300px;
+            width: 400px;
             text-align: center;
         }
         .config-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 20px;
             color: #007aff;
@@ -33,16 +33,14 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            font-size: 20px;
         }
         .checkbox-item input {
             margin-right: 10px;
         }
-        .checkbox-item span {
-            font-size: 18px;
-        }
         .admin-contact {
             color: red;
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 20px;
         }
     </style>
