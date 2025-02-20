@@ -27,7 +27,6 @@
             <button onclick="checkPassword()" class="w-full bg-blue-700 text-white py-3 rounded text-lg">Mở Khóa</button>
         </div>
     </div>
-
     <div id="main-menu" class="bg-black rounded-lg shadow-lg p-6 w-11/12 sm:w-1/3 hidden">
         <div class="bg-blue-700 text-white text-center py-4 rounded-t-lg text-lg">
             OPTIMIZED CONFIGURATION  @Pham_dong_an
