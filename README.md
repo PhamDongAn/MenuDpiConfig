@@ -11,6 +11,36 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+        .input-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .input-container input {
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            width: 300px;
+            transition: border-color 0.3s;
+        }
+        .input-container input:focus {
+            border-color: #45a049;
+            outline: none;
+        }
+        .input-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        .input-container button:hover {
+            background-color: #45a049;
+        }
         .menu-container {
             border: 2px solid #4CAF50;
             border-radius: 10px;
@@ -46,14 +76,11 @@
         .toggle:hover {
             opacity: 0.9;
         }
-        .input-container {
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
 
-<h1 style="font-size: 24px;">Menu Tùy Chỉnh</h1>
+<h1 style="font-size: 24px; text-align: center;">Menu Tùy Chỉnh</h1>
 
 <div class="input-container">
     <input type="text" id="keyInput" placeholder="Nhập khóa..." />
@@ -89,7 +116,7 @@
     function checkKey() {
         const keyInput = document.getElementById('keyInput').value;
         const menuContainer = document.getElementById('menuContainer');
-        if (keyInput === 'pda') {
+        if (keyInput === '123') {
             menuContainer.style.display = 'block';
         } else {
             alert('Khóa không đúng. Vui lòng thử lại.');
