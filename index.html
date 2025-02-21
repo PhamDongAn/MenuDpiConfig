@@ -12,7 +12,7 @@
             background-color: #FF0033; /* Màu tím */
         }
         h1 {
-            font-size: 3em; /* Tăng kích thước tiêu đề */
+            font-size: 3.5em; /* Tăng kích thước tiêu đề */
             text-align: center;
             color: white; /* Màu chữ trắng */
         }
@@ -22,7 +22,7 @@
         }
         .input-container input {
             padding: 20px; /* Tăng padding */
-            font-size: 4em; /* Tăng kích thước font */
+            font-size: 3em; /* Tăng kích thước font */
             border: 2px solid #4CAF50;
             border-radius: 5px;
             width: 80%;
@@ -35,7 +35,7 @@
         }
         .input-container button {
             padding: 20px; /* Tăng padding */
-            font-size: 2em; /* Tăng kích thước font */
+            font-size: 3em; /* Tăng kích thước font */
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -72,7 +72,7 @@
         .toggle {
             cursor: pointer;
             padding: 15px; /* Tăng padding */
-            font-size: 1.2em; /* Tăng kích thước font */
+            font-size: 0.9em; /* Tăng kích thước font */
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -84,6 +84,13 @@
         }
         .toggle:hover {
             opacity: 0.9;
+        }
+        .contact-info {
+            display: none; /* Ẩn thông tin liên hệ */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: white; /* Màu chữ trắng */
         }
     </style>
 </head>
@@ -121,12 +128,18 @@
     </ul>
 </div>
 
+<div class="contact-info" id="contactInfo">
+    Zalo Admin Đồng An : 0868124375
+</div>
+
 <script>
     function checkKey() {
         const keyInput = document.getElementById('keyInput').value;
         const menuContainer = document.getElementById('menuContainer');
+        const contactInfo = document.getElementById('contactInfo');
         if (keyInput === '123') {
             menuContainer.style.display = 'block';
+            contactInfo.style.display = 'block'; // Hiển thị thông tin liên hệ
         } else {
             alert('Khóa không đúng. Vui lòng thử lại.');
         }
