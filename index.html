@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Config Ultra</title>
+    <title>Optimized Đồng An IOS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #EEEEEE; /* Màu tím */
+            background-color: #C0C0C0; /* Màu nền */
         }
         h1 {
             font-size: 3.5em; /* Tăng kích thước tiêu đề */
             text-align: center;
-            color: white; /* Màu chữ trắng */
+            color: #FFDD44; /* Màu chữ vàng */
+            margin-top: 30px; /* Thêm khoảng cách phía trên */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Bóng đổ */
+            padding: 20px; /* Thêm padding */
+            border-radius: 10px; /* Bo góc */
+            /* Đã xóa màu nền */
         }
         .input-container {
             margin-bottom: 30px;
@@ -96,9 +101,9 @@
 </head>
 <body>
 
-<h1>MENU CONFIG ULTRA ⚙️</h1>
+<h1>Optimized Đồng An IOS</h1>
 
-<div class="input-container">
+<div class="input-container" id="inputContainer">
     <input type="text" id="keyInput" placeholder="Nhập khóa..." />
     <button onclick="checkKey()">Xác Nhận</button>
 </div>
@@ -137,9 +142,12 @@
         const keyInput = document.getElementById('keyInput').value;
         const menuContainer = document.getElementById('menuContainer');
         const contactInfo = document.getElementById('contactInfo');
+        const inputContainer = document.getElementById('inputContainer');
+        
         if (keyInput === '123') {
             menuContainer.style.display = 'block';
             contactInfo.style.display = 'block'; // Hiển thị thông tin liên hệ
+            inputContainer.style.display = 'none'; // Ẩn ô nhập mật khẩu
         } else {
             alert('Khóa không đúng. Vui lòng thử lại.');
         }
