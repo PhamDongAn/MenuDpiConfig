@@ -4,137 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimized Đồng An IOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #C0C0C0; /* Màu nền */
         }
-        h1 {
-            font-size: 3.5em; /* Tăng kích thước tiêu đề */
-            text-align: center;
-            color: #FFDD44; /* Màu chữ vàng */
-            margin-top: 90px; /* Thêm khoảng cách phía trên */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Bóng đổ */
-            padding: 20px; /* Thêm padding */
-            border-radius: 10px; /* Bo góc */
-            /* Đã xóa màu nền */
-        }
-        .input-container {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .input-container input {
-            padding: 20px; /* Tăng padding */
-            font-size: 3em; /* Tăng kích thước font */
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-            transition: border-color 0.3s;
-        }
-        .input-container input:focus {
-            border-color: #45a049;
-            outline: none;
-        }
-        .input-container button {
-            padding: 20px; /* Tăng padding */
-            font-size: 3em; /* Tăng kích thước font */
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s;
-        }
-        .input-container button:hover {
-            background-color: #45a049;
-        }
-        .menu-container {
-            border: 2px solid #4CAF50;
-            border-radius: 10px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;
-        }
-        .menu {
-            list-style-type: none;
-            padding: 0;
-        }
-        .menu-item {
-            margin: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 2.3em; /* Tăng kích thước font */
-        }
-        .menu-item span {
-            font-weight: bold; /* In đậm tên chức năng */
+        .custom-shadow {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
             cursor: pointer;
-            padding: 15px; /* Tăng padding */
-            font-size: 0.9em; /* Tăng kích thước font */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
             background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
-        .toggle.off {
-            background-color: #f44336;
-        }
-        .toggle:hover {
-            opacity: 0.9;
-        }
-        .contact-info {
-            display: none; /* Ẩn thông tin liên hệ */
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: white; /* Màu chữ trắng */
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-200 p-6">
 
-<h1>Optimized Đồng An IOS</h1>
+<h1 class="text-5xl font-extrabold text-black text-center mb-8">Optimze IOS</h1>
 
-<div class="input-container" id="inputContainer">
-    <input type="text" id="keyInput" placeholder="Nhập khóa..." />
-    <button onclick="checkKey()">Xác Nhận</button>
+<div class="input-container text-center mb-6">
+    <input type="text" id="keyInput" placeholder="Nhập khóa..." class="p-4 text-2xl border-2 border-green-500 rounded-lg w-80 focus:border-green-700 transition duration-300 ease-in-out" />
+    <button onclick="checkKey()" class="ml-2 p-4 text-2xl bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">Xác Nhận</button>
 </div>
 
-<div class="menu-container" id="menuContainer">
+<div class="menu-container custom-shadow bg-white rounded-lg p-6 mb-6" id="menuContainer" style="display: none;">
     <ul class="menu">
-        <li class="menu-item">
-            <span>Optimized Configuration</span>
-            <button class="toggle" onclick="toggle(this)">Bật</button>
+        <li class="menu-item flex justify-between items-center mb-4">
+            <span class="text-xl font-semibold">Optimized Configuration</span>
+            <label class="toggle">
+                <input type="checkbox" onclick="toggle(this)">
+                <span class="slider"></span>
+            </label>
         </li>
-        <li class="menu-item">
-            <span>Setup DPI Config</span>
-            <button class="toggle" onclick="toggle(this)">Bật</button>
+        <li class="menu-item flex justify-between items-center mb-4">
+            <span class="text-xl font-semibold">Setup DPI Config</span>
+            <label class="toggle">
+                <input type="checkbox" onclick="toggle(this)">
+                <span class="slider"></span>
+            </label>
         </li>
-        <li class="menu-item">
-            <span>Tối Ưu Hóa</span>
-            <button class="toggle" onclick="toggle(this)">Bật</button>
+        <li class="menu-item flex justify-between items-center mb-4">
+            <span class="text-xl font-semibold">Tối Ưu Hóa</span>
+            <label class="toggle">
+                <input type="checkbox" onclick="toggle(this)">
+                <span class="slider"></span>
+            </label>
         </li>
-        <li class="menu-item">
-            <span>Giảm Lố Đầu</span>
-            <button class="toggle" onclick="toggle(this)">Bật</button>
+        <li class="menu-item flex justify-between items-center mb-4">
+            <span class="text-xl font-semibold">Giảm Lố Đầu</span>
+            <label class="toggle">
+                <input type="checkbox" onclick="toggle(this)">
+                <span class="slider"></span>
+            </label>
         </li>
-        <li class="menu-item">
-            <span>Fix Rung Tâm</span>
-            <button class="toggle" onclick="toggle(this)">Bật</button>
+        <li class="menu-item flex justify-between items-center mb-4">
+            <span class="text-xl font-semibold">Fix Rung Tâm</span>
+            <label class="toggle">
+                <input type="checkbox" onclick="toggle(this)">
+                <span class="slider"></span>
+            </label>
         </li>
     </ul>
 </div>
 
-<div class="contact-info" id="contactInfo">
-    Zalo Admin Đồng An : 0868124375
+<div class="contact-info text-center text-lg text-black" id="contactInfo" style="display: none;">
+    Zalo Admin Đồng An : <strong>0868124375</strong>
+</div>
+
+<div class="sliders-container max-w-xl mx-auto mt-6" id="slidersContainer" style="display: none;">
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Tỉ Lệ Headshot</h2>
+        <div class="flex items-center">
+            <span class="text-gray-800 mr-2">0</span>
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Chống Rung Tâm</h2>
+        <div class="flex items-center">
+            <span class="text-gray-800 mr-2">0</span>
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Giảm Độ Giật</h2>
+        <div class="flex items-center">
+            <span class="text-gray-800 mr-2">0</span>
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Ghim Đầu</h2>
+        <div class="flex items-center">
+            <span class="text-gray-800 mr-2">0</span>
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Auto Ghim Tâm</h2>
+        <div class="flex items-center">
+            <span class="text-gray-800 mr-2">0</span>
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+        </div>
+    </div>
 </div>
 
 <script>
@@ -142,20 +154,25 @@
         const keyInput = document.getElementById('keyInput').value;
         const menuContainer = document.getElementById('menuContainer');
         const contactInfo = document.getElementById('contactInfo');
-        const inputContainer = document.getElementById('inputContainer');
+        const inputContainer = document.getElementsByClassName('input-container')[0];
+        const slidersContainer = document.getElementById('slidersContainer');
         
         if (keyInput === '123') {
             menuContainer.style.display = 'block';
             contactInfo.style.display = 'block'; // Hiển thị thông tin liên hệ
             inputContainer.style.display = 'none'; // Ẩn ô nhập mật khẩu
+            slidersContainer.style.display = 'block'; // Hiển thị sliders
         } else {
             alert('Khóa không đúng. Vui lòng thử lại.');
         }
     }
 
-    function toggle(button) {
-        button.classList.toggle('off');
-        button.textContent = button.classList.contains('off') ? 'Tắt' : 'Bật';
+    function toggle(checkbox) {
+        if (checkbox.checked) {
+            console.log("Bật");
+        } else {
+            console.log("Tắt");
+        }
     }
 </script>
 
